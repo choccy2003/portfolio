@@ -1,0 +1,54 @@
+.project-btn{
+    border:1px solid #ff8132;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #ff8132;
+    color: white;
+    transition: background-color 400ms, color 400ms;
+    cursor: pointer;
+    user-select: none;
+}
+.contact-btn{
+    border:1px solid #ff8132;
+    color: #ff8132;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 400ms, color 400ms;
+    user-select: none;
+}
+.project-btn:hover{
+background-color: white;
+color: #ff8132;
+}
+.contact-btn:hover{
+    background-color:#ff8132;
+color: white ;
+}
+
+@media screen and (max-width: 400px) {
+ .btn-grid{
+    width: 300px !important;
+    margin-top: 20px !important;
+
+ }
+ .extra-text{
+    display: none;
+ }
+    }
+    @media screen and (max-width: 880px) {
+       .skill-card-grid{
+        width: 100% !important;
+        gap:25px !important;
+        justify-content: center;
+       }
+       .skill-section-title{
+        font-size: 34px !important;
+       }
+           }
+           @media screen and (max-width: 350px) {
+            
+            .skill-section-title{
+             font-size: 28px !important;
+            }
+                }

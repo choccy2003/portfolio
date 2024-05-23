@@ -1,0 +1,121 @@
+.project-btn-grid{
+    position: relative;
+ height: 40px;
+ width: 135px;
+ border:2px solid #ff8132 ;
+ border-radius: 20px;
+ display: flex;
+ font-size: 18px;
+ font-weight: 600;
+ align-items: center;
+ padding: 0 15px;
+ gap: 35px;
+ z-index: 99;
+ user-select: none;
+ cursor: pointer;
+}
+.video-responsive {
+    position: relative;
+    display: block;
+    width: 300px;
+    overflow: hidden;
+  }
+  
+  
+.video-responsive::before {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+  }
+  
+.video-responsive-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+.videos-btn{
+    color: white;
+}
+.project-btn-selector{
+    height: 36px;
+    width: 81px;
+    background-color: #ff8132;
+    border-radius: 20px;
+    position: relative;
+    bottom: 40px;
+    z-index: 1;
+    left: 4px;
+}
+.videos-selected{
+animation: 700ms gfx-select-reverse-ani;
+left: 4px;
+}
+.gfx-selected{
+animation: 700ms gfx-select-ani;
+left: 84px;
+}
+.gfx-font-change{
+    animation: 600ms gfx-font-ani;
+    
+}
+.gfx-font-change-reverse{
+    animation: 600ms gfx-font-reverse-ani;
+    
+}
+@keyframes gfx-font-reverse-ani {
+    0%{
+        color: white;
+    }
+    100%{
+        color:black
+    }
+}
+@keyframes gfx-font-ani{
+0%{
+    color: black;
+}
+100%{
+    color:white
+}
+}
+@keyframes gfx-select-reverse-ani {
+    0% {
+        left:84px;
+    }
+    100% {
+        left: 4px;
+    }
+}
+@keyframes gfx-select-ani {
+    0% {
+        left:4px;
+    }
+    100% {
+        left: 84px;
+    }
+}
+@media screen and (max-width: 880px) {
+    .portfolio-section-title{
+        font-size: 34px !important;
+    }
+}
+@media screen and (max-width: 540px) {
+    .portfolio-section-title{
+        font-size: 30px !important;
+        width: fit-content !important;
+        margin: auto !important;
+        padding-top: 20px;
+    }
+    .section-grid{
+        display: block !important;
+    }
+    .toggle-btn{
+        width: fit-content !important;
+        margin: auto !important;
+        padding-top: 10px;
+    }
+}
