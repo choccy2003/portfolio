@@ -50,6 +50,20 @@
     z-index: 1;
     left: 4px;
 }
+.toggle-animation{
+    animation: 800ms toggle;
+}
+@keyframes toggle {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 .videos-selected{
 animation: 700ms gfx-select-reverse-ani;
 left: 4px;
@@ -102,6 +116,9 @@ left: 84px;
     .portfolio-section-title{
         font-size: 34px !important;
     }
+    .review-section-title{
+        font-size: 34px !important;
+    }
 }
 @media screen and (max-width: 540px) {
     .portfolio-section-title{
@@ -109,6 +126,10 @@ left: 84px;
         width: fit-content !important;
         margin: auto !important;
         padding-top: 20px;
+    }
+    .review-section-title{
+        font-size: 30px !important;
+        padding-top: 60px !important;
     }
     .section-grid{
         display: block !important;
@@ -118,4 +139,36 @@ left: 84px;
         margin: auto !important;
         padding-top: 10px;
     }
+    .video-grid-2{
+        grid-template-columns: repeat(auto-fit,310px) !important;
+    }
+    .gfx-images{
+        width: 310px !important;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .review-section-title{
+        font-size: 26px !important;
+        text-align: center !important;
+    }
+    .review-card{
+        font-size: 16px !important;
+        width: 320px !important;
+        min-width: 320px !important;
+        height: 260px !important;
+    }
+    .review-content{
+        padding: 35px !important;
+    }
+    
+
+}
+@media screen and (max-width: 350px) {
+
+.review-card{
+    width: 310px !important;
+    min-width: 310px !important;
+    margin: 10px 0px !important;
+}
 }

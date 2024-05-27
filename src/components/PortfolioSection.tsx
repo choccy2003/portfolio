@@ -1,13 +1,70 @@
 import React, { useRef, useState } from 'react'
 import "../styles/portfolioSection.css"
 import VideoPlayer from './VideoPlayer'
+import VideoPlayerPortrait from './VideoPlayerPortrait'
 const PortfolioSection = () => {
+    const imageData=[
+        {
+            id:"d1"
+        },
+        {
+            id:"d2"
+        },
+        {
+            id:"d3"
+        },
+        {
+            id:"d4"
+        },
+        {
+            id:"d5"
+        },
+        {
+            id:"d6"
+        }
+        ,
+        {
+            id:"d7"
+        }
+        ,
+        {
+            id:"d8"
+        }
+
+    ]
+    const portraitVideoData = [
+        {
+            id:1
+        },
+        {
+            id:2
+        },
+        {
+            id:3
+        },
+        {
+            id:6
+        },
+        {
+            id:7
+        }
+        
+        
+    ]
+    const videoData = [
+        {
+            id:5
+        },
+        {id:8},
+        {
+            id:9
+        }
+    ]
     const [videosBtnActive,setVideosBtnActive]=useState(true)
     const [gfxBtnActive,setGfxBtnActive]=useState(false)
     const GFXBtnRef = useRef<HTMLDivElement>(null)
     const VideosBtnRef = useRef<HTMLDivElement>(null)
     const SelectorRef = useRef<HTMLDivElement>(null)
-    console.log(videosBtnActive,gfxBtnActive)
     const triggerGFXSelect=()=>{
         if(GFXBtnRef.current!=null && SelectorRef.current!=null && VideosBtnRef.current!=null){
             SelectorRef.current.classList.remove('videos-selected')
@@ -40,11 +97,11 @@ const PortfolioSection = () => {
         
     }
   return (
-    <div style={{height:"100vh",backgroundColor:"white"}}>
+    <div style={{backgroundColor:"white",paddingBottom:"10px"}}>
         <div style={{height:"7vh",backgroundColor:"black",borderBottomLeftRadius:"40px",borderBottomRightRadius:"40px"}}>
         </div>
         <div className='section-grid' style={{display:"flex",alignItems:"center"}}>
-<div className='portfolio-section-title' style={{margin:"30px 5%",fontSize:"40px",fontWeight:"600",fontFamily:"Poppins"}}>Featured Projects
+<div className='portfolio-section-title' style={{margin:"30px 5%",fontSize:"40px",fontWeight:"600",fontFamily:"Poppins",height:"fit-content"}}>Featured Projects
         </div>
         <div className='toggle-btn' style={{marginTop:"41px",marginRight:"5%",marginLeft:"auto"}}>
             <div className='project-btn-grid'>
@@ -57,21 +114,50 @@ const PortfolioSection = () => {
         </div>
         
         </div>
-        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,360px)",justifyContent:"space-evenly",margin:"0 2%"}}>
-        <div style={{ aspectRatio: "16 / 9" }}>
-        <VideoPlayer/>
+        {videosBtnActive&&(<div style={{overflowX:"hidden"}} className='toggle-animation'>
+         <div style={{fontSize:"30px",fontWeight:"600",fontFamily:"Poppins",width:"fit-content",margin:"auto",padding:"20px 0px"}}>
+            Short Videos
         </div>
-        <div style={{ aspectRatio: "16 / 9" }}>
-        <VideoPlayer/>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,270px)",justifyContent:"space-evenly",margin:"0%"}}>
+            {portraitVideoData.map((data,i)=>{
+return (<div style={{padding:"15px 0px"}}>
+
+        <VideoPlayerPortrait id={data.id}/>
         </div>
-        <div style={{ aspectRatio: "16 / 9" }}>
-        <VideoPlayer/>
-        </div>
-        <div style={{ aspectRatio: "16 / 9" }}>
-        <VideoPlayer/>
-        </div>
-        </div>
+        )
+            })}
         
+       
+        
+        </div>
+         <div style={{fontSize:"30px",fontWeight:"600",fontFamily:"Poppins",width:"fit-content",margin:"auto",padding:"60px 0px 30px 0px"}}>
+            Long Videos
+        </div>
+        <div className='video-grid-2' style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,460px)",justifyContent:"space-evenly"}}>
+            {videoData.map((data,i)=>{
+return (
+        <VideoPlayer id={data.id}/>
+        )
+            })}
+        
+       
+        </div> 
+           
+        </div>)}
+        {gfxBtnActive&&(<div className='toggle-animation' style={{minHeight:"100vh"}}>
+        <div style={{fontSize:"30px",fontWeight:"600",fontFamily:"Poppins",width:"fit-content",margin:"auto",padding:"20px 0px"}}>Graphic Designs</div>
+        <div className='video-grid-2' style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,390px)",justifyContent:"space-evenly"}}> 
+            {imageData.map((data,i)=>{
+return (
+        <div>
+            <img className='gfx-images' style={{boxShadow:"0 0 3px black",borderRadius:"20px",margin:"20px 0px"}} width={380} src={`https://chocotv-backend.onrender.com/images/${data.id}.jpg`}/>
+            </div>
+        )
+            })}
+        
+       
+        </div> 
+            </div>)}
         
         
         

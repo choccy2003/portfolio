@@ -63,3 +63,12 @@ border-radius: 100px;
     transform: rotate(-90deg);
   }
 
+  @media screen and (max-width: 540px){
+.video-source{
+  width: 310px !important;
+}
+.video-container{
+  width: 310px !important;
+}
+  }
+

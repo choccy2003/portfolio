@@ -2,7 +2,7 @@ import React, {  useEffect, useRef, useState } from 'react'
 import { ImVolumeMedium,ImVolumeMute2 } from "react-icons/im";
 
 import "../styles/videoplayer.css"
-const VideoPlayer = (props) => {
+const VideoPlayerPortrait = (props) => {
   const [videoDuration,updateVideoDuration]=useState(0)
   const [videoProgressBar,updateVideoProgressBar]=useState(0)
   const [videoReplay,updateVideoReplay]=useState(false)
@@ -32,8 +32,8 @@ if (video.current) {
 },[props.videoId])
   return (
     <>
-      <div className='video-container' style={{position:"relative",width:`460px`,height:"max-content"}}>
-        <video className='video-source' loop ref={video} id='video' style={{width:`460px`,borderRadius:"10px",height:`max-content`,boxShadow:"0 0 15px black"}} onMouseLeave={()=>{
+      <div style={{position:"relative",width:`270px`,height:"480px"}}>
+        <video loop ref={video} id='video' style={{width:`270px`,borderRadius:"10px",height:`480px`,boxShadow:"0 0 15px black"}} onMouseLeave={()=>{
           video.current.pause()
         }} onMouseOver={()=>{video.current.play()}} src={resource} key={resource?resource:0} playsInline >
         
@@ -62,4 +62,4 @@ if (video.current) {
   )
 }
 
-export default VideoPlayer
+export default VideoPlayerPortrait

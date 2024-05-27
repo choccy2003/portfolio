@@ -5,6 +5,7 @@ import "../styles/navbar.css"
 import "../styles/homeSection.css"
 interface Props{
     portfolioSectionRef:RefObject<HTMLElement>;
+    contactSectionRef:RefObject<HTMLElement>;
     
 }
 const HomeSection:React.FC<Props> = (props) => {
@@ -12,6 +13,12 @@ const HomeSection:React.FC<Props> = (props) => {
     const handleScrollToPortfolio = () => {
         if (props.portfolioSectionRef.current) {
           props.portfolioSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+      const handleScrollToContact = () => {
+
+        if (props.contactSectionRef.current) {
+          props.contactSectionRef.current.scrollIntoView({ behavior: 'smooth' });
         }
       };
   return (
@@ -32,8 +39,8 @@ const HomeSection:React.FC<Props> = (props) => {
         
         <div className='btn-grid' style={{display:"flex", justifyContent:"space-evenly",margin:"auto",padding:"2% 0",width:"400px"}}>
             <div className='project-btn' onClick={handleScrollToPortfolio}><span className='extra-text'>Check my</span> <span style={{fontWeight:"700"}}>Projects🚀</span></div>
-            <div className='contact-btn'>
-            <div style={{position:"relative",top:"3px",display:"inline-block"}}><MdEmail/></div> <span style={{fontWeight:500}}>Email me</span> 
+            <div onClick={handleScrollToContact} className='contact-btn'>
+            <div  style={{position:"relative",top:"3px",display:"inline-block"}}><MdEmail/></div> <span style={{fontWeight:500}}>Email me</span> 
             </div>
         </div>
     </div>

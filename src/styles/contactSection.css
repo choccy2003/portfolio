@@ -1,0 +1,41 @@
+.link-grid a{
+    color: #ff8132;
+}
+
+@media screen and (max-width: 1150px) {
+.contact-section{
+    transform: scale(0.80);
+}
+}
+@media screen and (max-width: 1015px) {
+    .contact-section{
+        transform: scale(0.9);
+        grid-auto-flow: row !important;
+        justify-items: center;
+        overflow-x: hidden !important;
+    }
+    .text-section{
+        width: auto !important;
+        
+    }
+    }
+@media screen and (max-width: 700px) {
+    .text-section{
+        font-size: 40px !important;
+        line-height: 50px !important;
+        
+    }
+    .text-section div{
+        font-size: 16px !important;
+    }
+    
+    }
+    @media screen and (max-width: 425px) {
+        .container{
+            margin-bottom: 10px !important;
+    
+        }
+        .section-container{
+            padding-bottom: 0px !important;
+        }
+    }
